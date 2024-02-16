@@ -6,7 +6,7 @@
 /*   By: algaboya <algaboya@student.42yerevan.am    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 16:47:29 by algaboya          #+#    #+#             */
-/*   Updated: 2024/02/12 22:05:53 by algaboya         ###   ########.fr       */
+/*   Updated: 2024/02/15 20:29:32 by algaboya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,32 @@ int	ft_word_count(char const *s, char c)
 	}
 	return (d_count);
 }
+
+// int	ft_let_count(char *s, char c)
+// {
+// 	int	let_count;
+
+// 	let_count = 0;
+// 	while (*s != c && *s)
+// 		{
+// 			let_count++;
+// 			s++;
+// 		}
+// 	return (let_count);
+// }
+
+// char	**ft_ptr(int d_count)
+// {
+// 	char	**ptr;
+
+// 	ptr = (char **)malloc(sizeof(char *) * (d_count + 1));
+// 	if (!ptr)
+// 		return (NULL);
+// 	ptr[d_count] = NULL;
+// 	return (ptr);
+// }
+
+
 char	**ft_split(char const *s, char c)
 {
 	int		i;
@@ -43,6 +69,7 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	let_count = 0;
 	d_count = ft_word_count(s, c);
+	// ptr = ft_ptr(d_count);
 	ptr = (char **)malloc(sizeof(char *) * (d_count + 1));
 	if (!ptr)
 		return (NULL);
@@ -65,4 +92,14 @@ char	**ft_split(char const *s, char c)
 	}
 	return (ptr);
 }
+// char	**ft_ptr(int d_count)
+// {
+// 	char	**ptr;
+
+// 	ptr = (char **)malloc(sizeof(char *) * (d_count + 1));
+// 	if (!ptr)
+// 		return (NULL);
+// 	ptr[d_count] = NULL;
+// 	return (ptr);
+// }
 

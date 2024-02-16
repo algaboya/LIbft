@@ -6,11 +6,11 @@
 /*   By: algaboya <algaboya@student.42yerevan.am    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 21:41:38 by algaboya          #+#    #+#             */
-/*   Updated: 2024/02/14 20:41:19 by algaboya         ###   ########.fr       */
+/*   Updated: 2024/02/16 21:04:04 by algaboya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libc.h"
+#include "libft.h"
 
 int	ft_lstsize(t_list *lst)
 {
