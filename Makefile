@@ -14,11 +14,11 @@ $(NAME):$(OBJ)
 	cc $(FLAGS) -c $< -o $@
 
 bonus:$(BNOBJ)
-	ar rc $(BNSRC) $(BNOBJ)
+	ar -rc $(NAME) $(BNOBJ)
 
 clean:
 	rm -f $(OBJ)
-	rm -f $(BNSRC)
+	rm -f $(BNOBJ)
 
 fclean:clean
 	rm -f $(NAME)

@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: algaboya <algaboya@student.42yerevan.am    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/11 21:46:21 by algaboya          #+#    #+#             */
-/*   Updated: 2024/02/14 20:09:14 by algaboya         ###   ########.fr       */
+/*   Created: 2024/02/14 19:36:41 by algaboya          #+#    #+#             */
+/*   Updated: 2024/02/14 20:18:46 by algaboya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstlast(t_list *lst)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	if (!lst)
-		return (NULL);
-	while (lst->next)
-		lst = lst->next;
-	return (lst);
+	t_list	*i;
+
+	if (!new)
+		return ;
+	if (!*lst)
+		*lst = new;
+	i = ft_lstlast(*lst);
+	i->next = new;
 }
