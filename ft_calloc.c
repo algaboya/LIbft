@@ -6,7 +6,7 @@
 /*   By: algaboya <algaboya@student.42yerevan.am    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 13:38:36 by algaboya          #+#    #+#             */
-/*   Updated: 2024/02/04 14:33:02 by algaboya         ###   ########.fr       */
+/*   Updated: 2024/02/17 19:30:35 by algaboya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,13 @@
 void	*ft_calloc(size_t count, size_t size)
 {
 	size_t	i;
-	char	*ptr;
+	void	*ptr;
 
 	i = 0;
-	ptr = (char *)malloc(count * size);
+	ptr = malloc(count * size);
 	if (!ptr)
 		return (NULL);
 	ft_bzero(ptr, size * count);
 	return (ptr);
 }
+// 4294967295

@@ -6,7 +6,7 @@
 /*   By: algaboya <algaboya@student.42yerevan.am    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 20:55:02 by algaboya          #+#    #+#             */
-/*   Updated: 2024/02/14 21:00:03 by algaboya         ###   ########.fr       */
+/*   Updated: 2024/02/17 19:50:05 by algaboya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	if (!lst)
+	if (!lst || !f)
 		return ;
 	while (lst)
 	{
-		f(lst);
-		lst++;
+		f(lst->content);
+		lst = lst->next;
 	}
 }

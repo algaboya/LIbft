@@ -6,7 +6,7 @@
 /*   By: algaboya <algaboya@student.42yerevan.am    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 16:47:29 by algaboya          #+#    #+#             */
-/*   Updated: 2024/02/15 20:29:32 by algaboya         ###   ########.fr       */
+/*   Updated: 2024/02/17 17:01:27 by algaboya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,50 +32,17 @@ int	ft_word_count(char const *s, char c)
 	return (d_count);
 }
 
-// int	ft_let_count(char *s, char c)
-// {
-// 	int	let_count;
-
-// 	let_count = 0;
-// 	while (*s != c && *s)
-// 		{
-// 			let_count++;
-// 			s++;
-// 		}
-// 	return (let_count);
-// }
-
-// char	**ft_ptr(int d_count)
-// {
-// 	char	**ptr;
-
-// 	ptr = (char **)malloc(sizeof(char *) * (d_count + 1));
-// 	if (!ptr)
-// 		return (NULL);
-// 	ptr[d_count] = NULL;
-// 	return (ptr);
-// }
-
-
-char	**ft_split(char const *s, char c)
+char	**ft_ptrptr(const char *s, char **ptr, char c)
 {
-	int		i;
-	int		let_count;
-	int		d_count;
-	char	**ptr;
+	int	i;
+	int	let_count;
+	int	d_count;
 
-	if (!s)
-		return (NULL);
 	i = 0;
-	let_count = 0;
 	d_count = ft_word_count(s, c);
-	// ptr = ft_ptr(d_count);
-	ptr = (char **)malloc(sizeof(char *) * (d_count + 1));
-	if (!ptr)
-		return (NULL);
-	ptr[d_count] = NULL;
 	while (i < d_count)
 	{
+		let_count = 0;
 		while (*s != c && *s)
 		{
 			let_count++;
@@ -86,20 +53,41 @@ char	**ft_split(char const *s, char c)
 			ptr[i] = (char *)malloc(sizeof(char) * (let_count + 1));
 			ft_strlcpy(ptr[i], s - let_count, let_count + 1);
 			i++;
-			let_count = 0;
 		}
 		s++;
 	}
 	return (ptr);
 }
-// char	**ft_ptr(int d_count)
+
+char	**ft_split(char const *s, char c)
+{
+	int		i;
+	int		d_count;
+	char	**ptr;
+
+	if (!s)
+		return (NULL);
+	i = 0;
+	d_count = ft_word_count(s, c);
+	ptr = (char **)malloc(sizeof(char *) * (d_count + 1));
+	if (!ptr)
+		return (NULL);
+	ptr[d_count] = NULL;
+	return (ft_ptrptr(s, ptr, c));
+}
+
+// int main(void)
 // {
-// 	char	**ptr;
+//	 char **result;
+//     char *str = "--5-4-22-61-54------5-";
+//     char c = '-';
+//     int i = 0;
 
-// 	ptr = (char **)malloc(sizeof(char *) * (d_count + 1));
-// 	if (!ptr)
-// 		return (NULL);
-// 	ptr[d_count] = NULL;
-// 	return (ptr);
-// }
-
+//     result = ft_split(str, c);
+//     while (result[i])
+//     {
+//         printf("%s\n", result[i]);
+//         i++;
+//     }
+//     return (0);
+//}

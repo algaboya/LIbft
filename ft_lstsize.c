@@ -6,7 +6,7 @@
 /*   By: algaboya <algaboya@student.42yerevan.am    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 21:41:38 by algaboya          #+#    #+#             */
-/*   Updated: 2024/02/16 21:04:04 by algaboya         ###   ########.fr       */
+/*   Updated: 2024/02/17 17:50:09 by algaboya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ int	ft_lstsize(t_list *lst)
 {
 	int	i;
 
-	i = 0;
 	if (!lst)
 		return (0);
+	i = 1;
 	while (lst->next != NULL)
 	{
 		i++;

@@ -6,7 +6,7 @@
 /*   By: algaboya <algaboya@student.42yerevan.am    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 19:11:36 by algaboya          #+#    #+#             */
-/*   Updated: 2024/02/14 20:32:27 by algaboya         ###   ########.fr       */
+/*   Updated: 2024/02/17 18:28:07 by algaboya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ t_list	*ft_lstnew(void *content)
 	if (!new_lst)
 		return (NULL);
 	new_lst->content = content;
+	new_lst->next = NULL;
 	return (new_lst);
 }
-
-
