@@ -43,19 +43,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	ft_strlcpy(ptr, s1 + i, j - i + 2);
 	return (ptr);
 }
-
-// int main()
-// {
-//     char *s1 = "Hello oo olla";
-//     char *set = "HJla";
-//     printf("%s", ft_strtrim(s1, set));
-//     return (0);
-// }
-
-// int main()
-// {
-// 	char *s1 = "Hello oo olla";
-// 	char *set = "HJla";
-// 	printf("%s", ft_strtrim(s1, set));
-// 	return (0);
-// }
