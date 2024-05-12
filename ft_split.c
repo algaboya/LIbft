@@ -63,38 +63,6 @@ static char    **ft_ptrptr(char *s, char **ptr, char c)
 	return (ptr);
 }
 
-// char	**ft_split(char const *s, char c)
-// {
-// 	int		i;
-// 	int		d_count;
-// 	char	**ptr;
-
-// 	i = 0;
-// 	d_count = ft_word_count(s, c);
-// 	while (i < d_count)
-// 	{
-// 		let_count = 0;
-// 		while (*s != c && *s)
-// 		{
-// 			let_count++;
-// 			s++;
-// 		}
-// 		if (let_count != 0)
-// 		{
-// 			ptr[i] = (char *)malloc(sizeof(char) * (let_count + 1));
-// 			ft_strlcpy(ptr[i], s - let_count, let_count + 1);
-// 			i++;
-// 		}
-// 		s++;
-// 	}
-// 	return (ptr);
-// 	ptr = (char **)malloc(sizeof(char *) * (d_count + 1));
-// 	if (!ptr)
-// 		return (NULL);
-// 	ptr[d_count] = NULL;
-//     return (ft_ptrptr(s, ptr, c));
-// }
-
 char	**ft_split(char const *s, char c)
 {
 	int		i;
@@ -111,19 +79,3 @@ char	**ft_split(char const *s, char c)
 	ptr[d_count] = NULL;
 	return (ft_ptrptr(s, ptr, c));
 }
-
-// int main(void)
-// {
-//	 char **result;
-//     char *str = "--5-4-22-61-54------5-";
-//     char c = '-';
-//     int i = 0;
-
-//     result = ft_split(str, c);
-//     while (result[i])
-//     {
-//         printf("%s\n", result[i]);
-//         i++;
-//     }
-//     return (0);
-//}
